@@ -1,1 +1,5 @@
-console.log('Time to get started...');
+const person = {
+  name: "Consuela",
+  age: 31,
+  hobbies: [],
+};
