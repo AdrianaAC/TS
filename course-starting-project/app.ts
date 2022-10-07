@@ -1,20 +1,8 @@
-const person: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  role: [number, string];
-} = {
-  name: "Consuela",
-  age: 31,
-  hobbies: ["Gaming", "TvShows"],
-  role: [2, "edit"],
-};
-
-let favoriteHobbies: string[];
-favoriteHobbies = ["Sports"];
-
-console.log(person.name);
-
-for (const hobby of person.hobbies) {
-  console.log(hobby);
+function add(n1: number, n2: number, showResult: boolean, phrase: string) {
+  const result = n1 + n2;
+  if (showResult) {
+    console.log(phrase + result);
+  } else {
+    return result;
+  }
 }
