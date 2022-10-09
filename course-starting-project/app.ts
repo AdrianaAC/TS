@@ -1,7 +1,4 @@
-function add(n1: number, n2: number): number {
-  return n1 + n2;
-}
+const userName = "Consuela";
+console.log(userName);
 
-function concatString(s1: string, s2: string): string {
-  return s1 + s2;
-}
+//--watch or -w to get watch mode on one file
