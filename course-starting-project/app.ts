@@ -1,5 +1,3 @@
-const person = {
-  name: "Consuela",
-  age: 31,
-  hobbies: [],
-};
+let userName = "Consuela";
+console.log(userName);
+//--watch or -w to get watch mode on one file
