@@ -44,3 +44,58 @@ function prtEmployeeInfo(emp: UnknownEmployee) {
 }
 
 prtEmployeeInfo(e1);
+
+class Car {
+  drive() {
+    console.log("Driving a car");
+  }
+}
+
+class Truck {
+  drive() {
+    console.log("Driving a truck");
+  }
+
+  loadCargo(amount: number) {
+    console.log("Loading " + amount);
+  }
+}
+
+type Vehicle = Car | Truck;
+const v1 = new Car();
+const t1 = new Truck();
+
+function useVehicle(vehicle: Vehicle) {
+  vehicle.drive();
+  if (vehicle instanceof Truck) {
+    vehicle.loadCargo(10);
+  }
+}
+
+useVehicle(v1);
+useVehicle(t1);
+
+interface Bird {
+  kind: "bird";
+  flyingSpeed: number;
+}
+
+interface Horse {
+  kind: "horse";
+  runningSpeed: number;
+}
+
+type Animal = Bird | Horse;
+
+function moveAnimal(animal: Animal) {
+  let speed;
+  switch (animal.kind) {
+    case "bird":
+      speed = animal.flyingSpeed;
+      break;
+    case "horse":
+      speed = animal.runningSpeed;
+      break;
+  }
+  console.log("Moving with speed:" + speed);
+}
