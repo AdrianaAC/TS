@@ -21,4 +21,4 @@ function countAndDesc<T extends Lengthy>(element: T) {
   return [element, descText];
 }
 
-console - log(countAndDesc("Hello there!"));
+console.log(countAndDesc("Hello there!"));
