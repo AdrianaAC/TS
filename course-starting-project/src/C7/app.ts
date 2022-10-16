@@ -12,7 +12,7 @@ interface Lengthy {
   length: number;
 }
 
-function countAndDesc<T extends Lengthy>(element: T) {
+function countAndDesc<T extends Lengthy>(element: T): [T, string] {
   let descText = "Got no value!";
 
   if (element.length > 0) {
@@ -21,4 +21,48 @@ function countAndDesc<T extends Lengthy>(element: T) {
   return [element, descText];
 }
 
-console.log(countAndDesc("Hello there!"));
+function extractAndConv<T extends object, U extends keyof T>(obj: T, key: U) {
+  return "Value: " + obj[key];
+}
+
+extractAndConv({ name: "Consuela" }, "name");
+
+class DataStorage<T> {
+  private data: T[] = [];
+
+  addItem(item: T) {
+    this.data.push(item);
+  }
+
+  removeItem(item: T) {
+    this.data.splice(this.data.indexOf(item), 1);
+  }
+
+  getItems() {
+    return [...this.data];
+  }
+}
+
+const textStorage = new DataStorage<string>();
+textStorage.addItem("Consuela");
+textStorage.addItem("Hello");
+textStorage.removeItem("Hello");
+console.log(textStorage);
+
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
+}
+
+function createCourseGoal(
+  title: string,
+  description: string,
+  date: Date
+): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUntil = date;
+  return courseGoal as CourseGoal;
+}
