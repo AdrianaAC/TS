@@ -66,3 +66,6 @@ function createCourseGoal(
   courseGoal.completeUntil = date;
   return courseGoal as CourseGoal;
 }
+
+const moreNames: Readonly<string[]> = ["John", "Jane"];
+// moreNames.push("Doe"); ----> can't alter the array properties due to readonly utility type
